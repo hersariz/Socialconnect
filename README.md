@@ -31,7 +31,9 @@ SocialConnect adalah aplikasi media sosial sederhana dengan UI/UX modern yang me
 ### Langkah Instalasi
 
 1. Clone repository ini ke direktori htdocs XAMPP Anda:
+   
    ```
+   https://github.com/hersariz/Socialconnect.git
    ```
    atau download dan ekstrak file ZIP ke direktori `htdocs`.
 
