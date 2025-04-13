@@ -1,115 +1,88 @@
-# SocialConnect - Platform Media Sosial Modern
+# SocialConnect
 
-SocialConnect adalah aplikasi media sosial sederhana dengan UI/UX modern yang memungkinkan pengguna untuk berbagi momen, berinteraksi, dan terhubung dengan teman-teman.
+Aplikasi media sosial sederhana yang dibangun dengan PHP dan MySQL dengan fitur-fitur lengkap.
 
-## Fitur Utama
+## Fitur
 
-- Registrasi dan login pengguna
-- Membuat, menyukai, dan mengomentari post
-- Profil pengguna dengan foto, bio, dan statistik
-- Mengikuti/berhenti mengikuti pengguna lain
-- Feed beranda dengan postingan terbaru
-- Notifikasi aktivitas
-- Pesan langsung antar pengguna
-- Desain responsif untuk berbagai perangkat
+- **Pengelolaan Akun**
+  - Registrasi dan login pengguna
+  - Profil pengguna dengan foto profil, bio, dan info dasar
+  - Update profil dan pengaturan akun
 
-## Teknologi yang Digunakan
+- **Postingan dan Interaksi**
+  - Membuat postingan teks dan gambar
+  - Like dan komentar pada postingan
+  - Fitur hashtag yang dapat diklik (#hashtag)
+  - Berbagi postingan ke timeline pengguna
+  - Berbagi ke platform eksternal (WhatsApp, Facebook, Twitter)
 
-- **Frontend**: HTML, CSS, JavaScript, Bootstrap 5, Font Awesome
-- **Backend**: PHP
+- **Komunikasi**
+  - Sistem pesan antar pengguna
+  - Notifikasi untuk interaksi (like, komentar, follow)
+  - Follow/unfollow pengguna lain
+
+- **Pencarian dan Eksplorasi**
+  - Pencarian pengguna, postingan, dan hashtag
+  - Halaman eksplorasi untuk konten trending
+  - Highlight hasil pencarian
+
+## Teknologi
+
+- **Backend**: PHP 8.2
 - **Database**: MySQL
-- **Library**: jQuery
+- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap 5
+- **Library**: jQuery, Font Awesome
+
+## Struktur Database
+
+Database terdiri dari tabel-tabel berikut:
+- `users` - Data pengguna
+- `posts` - Postingan dari pengguna
+- `comments` - Komentar pada postingan
+- `likes` - Like pada postingan
+- `followers` - Relasi follower/following
+- `notifications` - Notifikasi pengguna
+- `messages` - Pesan antar pengguna
+- `activities` - Aktivitas pengguna
+- `trending_topics` - Hashtag trending
 
 ## Instalasi
 
-### Prasyarat
-- PHP 7.4 atau lebih baru
-- MySQL 5.7 atau lebih baru
-- Server web (seperti Apache)
-- XAMPP (direkomendasikan untuk pengembangan lokal)
+1. **Persiapan server:**
+   - Install XAMPP atau server PHP/MySQL lainnya
+   - PHP versi 8.0+ direkomendasikan
 
-### Langkah Instalasi
+2. **Setup database:**
+   - Buat database baru bernama `social_media`
+   - Import file `database.sql` ke database tersebut
 
-1. Clone repository ini ke direktori htdocs XAMPP Anda:
-   
-   ```
-   https://github.com/hersariz/Socialconnect.git
-   ```
-   atau download dan ekstrak file ZIP ke direktori `htdocs`.
+3. **Konfigurasi:**
+   - Copy file `includes/config.sample.php` ke `includes/config.php`
+   - Edit `config.php` dengan kredensial database Anda
 
-2. Buat database MySQL baru bernama `social_media_db`:
-   ```
-   CREATE DATABASE social_media_db;
-   ```
+4. **Upload kode:**
+   - Upload semua file ke direktori htdocs (XAMPP) atau root direktori web Anda
+   - Pastikan web server memiliki izin menulis ke folder `assets/uploads/`
 
-3. Import file `database.sql` untuk membuat struktur database dan data contoh:
-   ```
-   mysql -u root -p social_media_db < database.sql
-   ```
-   atau gunakan phpMyAdmin untuk import file SQL.
+5. **Akses aplikasi:**
+   - Buka browser dan akses `http://localhost/social_media/`
 
-4. Konfigurasikan koneksi database di `includes/config.php` jika diperlukan:
-   ```php
-   $db_host = "localhost";
-   $db_user = "root";
-   $db_pass = ""; // Sesuaikan dengan password MySQL Anda
-   $db_name = "social_media_db";
-   ```
+## Akun Demo
 
-5. Buat folder `assets/uploads` jika belum ada dan pastikan memiliki izin tulis:
-   ```
-   mkdir -p assets/uploads
-   chmod 777 assets/uploads
-   ```
+- **Username**: admin
+- **Password**: admin123
 
-6. Akses aplikasi melalui browser:
-   ```
-   http://localhost/social_media
-   ```
+- **Username**: user1
+- **Password**: user123
 
-## Penggunaan
+## Pengembangan Selanjutnya
 
-### Login
-- Gunakan akun demo:
-  - Username: johndoe
-  - Password: password123
-
-### Registrasi
-- Klik tombol "Daftar" di halaman login atau beranda
-- Isi formulir registrasi dengan username, email, dan password
-
-### Membuat Post
-- Setelah login, Anda akan melihat form "Buat Post Baru" di beranda
-- Tulis konten post dan tambahkan gambar (opsional)
-- Klik tombol "Posting"
-
-### Interaksi dengan Post
-- Klik ikon hati untuk menyukai post
-- Klik ikon komentar untuk melihat dan menambahkan komentar
-- Klik ikon bagikan untuk membagikan post
-
-### Profil Pengguna
-- Klik pada username atau foto pengguna untuk melihat profilnya
-- Dari halaman profil, Anda dapat melihat post, media, suka, dan following pengguna
-- Jika melihat profil Anda sendiri, Anda dapat mengedit profil
-
-## Pengembangan Lebih Lanjut
-
-Beberapa fitur yang bisa ditambahkan untuk pengembangan lebih lanjut:
-
-- Pencarian pengguna dan konten
-- Sistem hashtag dan trending topics
-- Upload video
-- Fitur story/status
-- Grup dan komunitas
-- Verifikasi email
-- Autentikasi dua faktor
-- API untuk aplikasi mobile
+- Implementasi API untuk aplikasi mobile
+- Fitur story seperti Instagram
+- Sistem polling dan survey
+- Integrasi dengan Google Analytics
+- Mode gelap/terang (dark/light mode)
 
 ## Lisensi
 
-Hak Cipta © 2025 SocialConnect. Semua hak dilindungi.
-
-## Kontak
-
-Untuk pertanyaan atau saran, silakan hubungi kami di rizkymvp123@gmail.com
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).

@@ -1,0 +1,32 @@
+# Konfigurasi yang berisi kredensial
+config.php
+includes/config.php
+
+# File dan folder yang dibuat selama runtime
+/assets/uploads/*
+!/assets/uploads/.gitkeep
+
+# Folder cache
+/temp/
+/tmp/
+/cache/
+
+# File sistem operasi
+.DS_Store
+Thumbs.db
+
+# File IDE dan editor
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Log file
+*.log
+error_log
+php_errors.log
+
+# File sementara
+*.tmp
+*.bak
+*.swp 
